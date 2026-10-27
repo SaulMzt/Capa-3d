@@ -1,0 +1,15 @@
+# Secretos y configuración local
+config.local.php
+config.env
+
+# Datos generados en tiempo de ejecución
+data.json
+*.log
+
+# Copias de seguridad
+*.zip
+codexify-*/
+
+# Sistema
+.DS_Store
+Thumbs.db

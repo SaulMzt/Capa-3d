@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login privado para admin y usuarios de Codexify.">
+  <meta name="theme-color" content="#f4f7fb">
+  <link rel="icon" type="image/png" href="assets/codexify-logo.png">
+  <link rel="apple-touch-icon" href="assets/codexify-logo.png">
+  <title>Login | Codexify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="app-body auth-app">
+  <canvas class="particle-canvas" id="particles" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Ir al inicio">
+      <span class="brand-mark"></span>
+      <span>Codexify</span>
+    </a>
+    <nav class="nav-links" aria-label="Navegacion principal">
+      <a href="index.html">Inicio</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="auth-shell">
+    <section class="auth-card reveal" aria-labelledby="login-title">
+      <div>
+        <p class="eyebrow">Acceso privado</p>
+        <h1 id="login-title" class="auth-title">Iniciar sesion</h1>
+        <p class="auth-copy">Entra a tu panel privado de Codexify.</p>
+      </div>
+
+      <form class="form-stack" id="login-form">
+        <label>
+          Usuario
+          <input type="text" name="username" autocomplete="username" placeholder="admin o usuario" required>
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" autocomplete="current-password" placeholder="Ingresa tu password" required>
+        </label>
+        <div class="login-action-row">
+          <button class="button login-arrow-button" type="submit" aria-label="Entrar a Codexify">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+            </svg>
+            <div class="text">Entrar</div>
+          </button>
+          <div class="auth-switch" role="tablist" aria-label="Acceso a Codexify">
+            <button class="auth-switch-button active" type="button" data-auth-view="register">Registrar</button>
+          </div>
+        </div>
+        <p class="form-error" id="login-error" role="alert"></p>
+      </form>
+
+      <form class="form-stack register-form" id="register-form" hidden>
+        <label>
+          Nombre de inicio de sesion
+          <input type="text" name="username" autocomplete="username" placeholder="Ej. usuario123" required>
+        </label>
+        <label>
+          Nombre mostrado en pantalla
+          <input type="text" name="name" autocomplete="name" placeholder="Ej. Usuario Demo" required>
+        </label>
+        <label>
+          Contraseña
+          <input type="password" name="password" autocomplete="new-password" placeholder="Crea una contraseña" required>
+          <span class="password-strength" id="password-strength">Seguridad: debil</span>
+        </label>
+        <label>
+          Confirmar contraseña
+          <input type="password" name="confirmPassword" autocomplete="new-password" placeholder="Repite exactamente la contraseña" required>
+        </label>
+
+        <div class="register-options" aria-label="Opciones Orange Pi Zero 2W">
+          <div class="register-options-heading">
+            <p class="eyebrow">Orange Pi Zero 2W</p>
+            <h2>Selecciona una opcion</h2>
+            <p>Las tres opciones funcionan perfectamente. La diferencia principal es la refrigeracion.</p>
+          </div>
+
+          <div class="option-carousel">
+            <label class="option-card">
+              <input type="radio" name="option" value="economica" checked>
+              <span class="option-image-grid two-images">
+                <img src="assets/orange-pi-zero-2w.png" alt="Orange Pi Zero 2W">
+                <img src="assets/orange-pi-aluminum-heatsinks.png" alt="Disipadores de aluminio">
+              </span>
+              <strong>Opcion Economica</strong>
+              <span>Orange Pi Zero 2W con disipadores de aluminio.</span>
+            </label>
+
+            <label class="option-card">
+              <input type="radio" name="option" value="cuerpo-completo">
+              <span class="option-image-grid two-images">
+                <img src="assets/orange-pi-zero-2w.png" alt="Orange Pi Zero 2W">
+                <img src="assets/orange-pi-full-body-heatsink.png" alt="Disipador de cuerpo completo">
+              </span>
+              <strong>Disipador de cuerpo completo</strong>
+              <span>Mejor disipacion del calor para uso continuo.</span>
+            </label>
+
+            <label class="option-card">
+              <input type="radio" name="option" value="ventiladores">
+              <span class="option-image-grid two-images">
+                <img src="assets/orange-pi-zero-2w.png" alt="Orange Pi Zero 2W">
+                <img src="assets/orange-pi-silent-fans.png" alt="Ventiladores silenciosos">
+              </span>
+              <strong>Ventiladores silenciosos</strong>
+              <span>Modelo mas completo con refrigeracion superior.</span>
+            </label>
+          </div>
+
+          <div class="price-note">
+            <strong>Precios actualizables</strong>
+            <span>Orange Pi Zero 2W: MX$460.50</span>
+            <span>Disipador completo: MX$96.90 - MX$203.90</span>
+            <span>Ventiladores silenciosos: MX$118.84</span>
+          </div>
+        </div>
+
+        <div class="login-action-row">
+          <button class="button login-arrow-button" type="submit" aria-label="Registrarme en Codexify">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+            </svg>
+            <div class="text">Registrarme</div>
+          </button>
+          <div class="auth-switch" role="tablist" aria-label="Volver al login">
+            <button class="auth-switch-button active" type="button" data-auth-view="login">Login</button>
+          </div>
+        </div>
+        <p class="form-error" id="register-error" role="alert"></p>
+        <p class="form-success" id="register-success" role="status"></p>
+      </form>
+
+    </section>
+  </main>
+
+  <nav class="bottom-nav public-bottom-nav" aria-label="Navegacion inferior">
+    <a class="bottom-nav-item" href="index.html">
+      <span aria-hidden="true"><svg class="nav-svg" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></span>
+      <strong>Inicio</strong>
+    </a>
+    <a class="bottom-nav-item active" href="login.html">
+      <span aria-hidden="true"><svg class="nav-svg" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg></span>
+      <strong>Login</strong>
+    </a>
+  </nav>
+
+  <script src="script.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
+
