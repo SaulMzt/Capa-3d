@@ -1,0 +1,13 @@
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import Store from '../components/store/Store';
+import '../app/globals.css';
+import '../app/admin-mobile.css';
+import '../app/pricing.css';
+import '../app/customer.css';
+import '../app/order-chat.css';
+import '../app/ai-products.css';
+import '../app/maintenance.css';
+const Admin=React.lazy(()=>import('../components/admin/Admin'));
+const path=decodeURI(location.pathname).split('/').filter(Boolean);const element=path[0]==='admin'?<React.Suspense fallback={<div style={{padding:32}}>Cargando administración…</div>}><Admin section={path[1]||'dashboard'}/></React.Suspense>:path[0]==='productos'&&path[1]?<Store productId={path[1]}/>:<Store catalogOnly={path[0]==='productos'||path[0]==='ofertas'} offersOnly={path[0]==='ofertas'}/>;
+createRoot(document.getElementById('root')!).render(<React.StrictMode>{element}</React.StrictMode>);

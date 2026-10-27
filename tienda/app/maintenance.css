@@ -1,0 +1,19 @@
+.maintenance-card{display:flex;align-items:center;gap:18px;margin-bottom:24px;border-color:#dde6d7;background:#f7faf4}
+.maintenance-card.is-on{border-color:#f2c6ad;background:#fff7f1}
+.maintenance-card-icon{width:44px;height:44px;display:grid;place-items:center;flex:none;border-radius:11px;background:#e6efdf;color:#4d7946}
+.maintenance-card.is-on .maintenance-card-icon{background:#ffe6d9;color:#c4512d}
+.maintenance-card-copy{flex:1;min-width:0}
+.maintenance-card h3{font-size:18px;margin:0 0 5px}
+.maintenance-card strong{display:block;font-size:13px;color:#4a7144}
+.maintenance-card.is-on strong{color:#b04e2f}
+.maintenance-card p{font-size:13px;color:#74816e;line-height:1.5;margin:5px 0 0}
+.maintenance-card>.btn{flex:none}
+@media(max-width:700px){.maintenance-card{align-items:flex-start;flex-wrap:wrap}.maintenance-card>.btn{width:100%}}
+.maintenance-screen{min-height:100vh;display:grid;place-items:center;background:#f3f5ef;color:#283026;padding:24px;font-family:Arial,Helvetica,sans-serif}
+.maintenance-screen-card{width:min(100%,560px);padding:clamp(28px,7vw,56px);background:#fff;border:1px solid #dfe6d8;border-radius:20px;box-shadow:0 24px 70px #26351d12;text-align:center}
+.maintenance-screen-mark{width:64px;height:64px;margin:0 auto 24px;display:grid;place-items:center;border-radius:16px;background:#f26036;color:#fff;font-size:34px;font-weight:700}
+.maintenance-screen-card>span{color:#ec5d36;font-size:11px;font-weight:700;letter-spacing:2px}
+.maintenance-screen-card h1{font-size:clamp(30px,7vw,44px);line-height:1.08;letter-spacing:-1.5px;margin:15px 0}
+.maintenance-screen-line{width:54px;height:3px;background:#f26036;border-radius:3px;margin:0 auto 28px}
+.maintenance-screen-card p{color:#687363;font-size:16px;line-height:1.7;margin:0 0 28px}
+.maintenance-screen-card small{font-size:12px;color:#98a192}

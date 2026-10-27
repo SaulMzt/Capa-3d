@@ -1,0 +1,1 @@
+export async function api(path:string,body?:unknown,method?:string):Promise<any>{const res=await fetch('/api/'+path,{method:method||(body?'POST':'GET'),headers:body?{'Content-Type':'application/json'}:undefined,body:body?JSON.stringify(body):undefined});const data:any=await res.json();if(!res.ok)throw new Error(data.error||'No fue posible completar la operación.');return data;}

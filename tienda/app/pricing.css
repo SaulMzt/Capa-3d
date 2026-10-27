@@ -1,0 +1,57 @@
+.price-page{max-width:850px;display:grid;gap:24px}
+.price-page>.field select{width:100%;min-height:44px;margin-top:8px;border:1px solid #dce2d2;border-radius:7px;padding:10px 12px;background:white;color:#2d3827}
+.price-page>.muted{font-size:13px;margin-top:-12px}
+.price-calculator{display:grid;gap:18px;padding:22px;border:1px solid #dce4d5;border-radius:10px;background:#fafcf8}
+.price-calculator-title{display:flex;align-items:flex-start;gap:12px}
+.price-calculator-title>svg{color:var(--brand);flex:none;margin-top:3px}
+.price-calculator-title h3{font-size:19px;margin:0}
+.price-calculator-title p{font-size:13px;color:#7e8976;margin:5px 0 0}
+.price-calculator .form-grid{margin:0}
+.price-calculator .field input,.price-calculator .field select{width:100%;margin-top:7px}
+.price-calculator .field select{min-height:44px;border:1px solid #dce2d2;border-radius:7px;padding:10px 12px;background:#fff;color:#2d3827}
+.price-profiles{display:grid;gap:13px;padding:16px;border:1px solid #e0e8d9;border-radius:8px;background:#f4f8f0}
+.price-profiles-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.price-profiles h4{font-size:15px;margin:0}
+.price-profiles-heading p{font-size:12px;color:#74816e;margin:4px 0 0}
+.price-profile-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.price-profile{display:flex;align-items:center;gap:9px;padding:9px 10px;border:1px solid #dce4d5;border-radius:7px;background:#fff;min-width:0;font-size:12px}
+.price-profile>span:nth-child(2){flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.price-profile b,.price-profile small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.price-profile button{color:var(--brand);display:inline-flex;align-items:center}
+.price-profile button:last-child{color:#ad6248}
+.price-color{display:inline-block;width:24px;height:24px;border-radius:50%;border:1px solid #9da897;flex:none}
+.price-profile-form{display:grid;gap:12px;border-top:1px solid #dce4d5;padding-top:14px}
+.price-profile-form h5{font-size:14px;margin:0}
+.price-profile-form .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.price-profile-form input[type=color]{padding:3px;min-height:44px}
+.price-profile-actions{display:flex;gap:8px;flex-wrap:wrap}
+.price-filaments{display:grid;gap:12px}
+.price-filaments h4{font-size:15px;margin:0}
+.price-filament{display:grid;gap:12px;padding:16px;border:1px solid #e0e8d9;border-radius:8px;background:#fff}
+.price-filament-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px}
+.price-filament .form-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.price-filament-profile{display:flex;align-items:end;gap:12px}
+.price-filament-profile .field{flex:1}
+.price-add-filament,.price-remove-filament{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-size:13px;font-weight:600}
+.price-add-filament{justify-self:start;padding:7px 2px}
+.price-remove-filament{color:#ad6248}
+.price-machine{display:grid;gap:12px;padding:16px;border:1px solid #e0e8d9;border-radius:8px;background:#f3f8ef}
+.price-machine h4{font-size:15px;margin:0}
+.price-machine .form-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.price-rate-help{font-size:12px;color:#62745e;line-height:1.5;margin:0}
+.price-formula,.price-hint{font-size:12px;color:#74816e;line-height:1.5}
+.price-result{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.price-result>div{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;background:#fff;border:1px solid #e4e9de;border-radius:7px;font-size:13px}
+.price-result>div span{color:#74816e}
+.price-result>div b{white-space:nowrap}
+.price-result>.price-result-final{grid-column:1/-1;align-items:center;background:#edf4e7;border-color:#d8e4ce}
+.price-result-final strong{font-size:24px;color:#395e35;white-space:nowrap}
+.price-calculator>.btn{justify-self:start}
+.price-success{font-size:13px;color:#3b7639}
+.price-saved{font-size:13px;padding:14px;background:#edf4e7;border-radius:7px}
+.price-saved button{color:var(--brand);text-decoration:underline;margin-left:6px}
+.price-calculator-details{border:1px solid #dce4d5;border-radius:9px;overflow:hidden}
+.price-calculator-details summary{cursor:pointer;padding:14px 16px;font-weight:600;font-size:14px;background:#f4f8f0}
+.price-calculator-details[open] summary{border-bottom:1px solid #dce4d5}
+.price-calculator-details .price-calculator{border:0;border-radius:0}
+@media(max-width:600px){.price-calculator{padding:16px}.price-calculator .form-grid,.price-filament .form-grid,.price-profile-form .form-grid,.price-machine .form-grid,.price-result,.price-profile-list{grid-template-columns:1fr}.price-profiles-heading{flex-direction:column}.price-result>.price-result-final{grid-column:auto}.price-result-final strong{font-size:21px}.price-calculator>.btn{width:100%;justify-content:center}}

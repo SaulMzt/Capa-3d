@@ -1,0 +1,2 @@
+import fs from 'node:fs';
+const file='components/store/Store.tsx';let s=fs.readFileSync(file,'utf8');s=s.replace('const d=await r.json()','const d:any=await r.json()');s=s.replace('useState<Product[]>(demoProducts)','useState<Product[]>([])').replace('useState<Category[]>(demoCategories)','useState<Category[]>([])').replace('useState(false),[error,setError]','useState(true),[error,setError]');s=s.replace('// The initial collection is the authored preview; connected loading is enabled with the API slice.','useEffect(()=>{refresh()},[]);');fs.writeFileSync(file,s);

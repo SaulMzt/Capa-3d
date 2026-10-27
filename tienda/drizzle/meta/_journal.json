@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1790229396665,
+      "tag": "0000_graceful_silver_surfer",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1790229519419,
+      "tag": "0001_inventory_rules",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1790287081596,
+      "tag": "0002_customer_accounts",
+      "breakpoints": true
+    }
+  ]
+}

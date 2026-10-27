@@ -1,0 +1,8 @@
+import {env} from 'cloudflare:workers';
+import type {Product,Order} from '@/types/shop';
+export function db(){if(!env.DB)throw new Error('La base de datos no está disponible.');return env.DB}
+export const statement=(sql:string,...values:any[])=>db().prepare(sql).bind(...values);
+export async function all(sql:string,...values:any[]){const r=await statement(sql,...values).all<any>();return r.results||[]}
+export async function first(sql:string,...values:any[]){return statement(sql,...values).first<any>()}
+export async function products(admin=false):Promise<Product[]>{const rows=await all('SELECT * FROM products '+(admin?'':'WHERE published=1')+' ORDER BY created_at DESC');const imgs=await all('SELECT product_id,url FROM product_images ORDER BY sort');const popularity=await all("SELECT product_id,SUM(quantity) n FROM orders WHERE status!='Cancelado' GROUP BY product_id");return rows.map(r=>({...JSON.parse(r.data),id:r.id,name:r.name,categoryId:r.category_id||'',price:r.price/100,stock:r.stock,unlimited:!!r.unlimited,published:!!r.published,status:r.status,createdAt:r.created_at,images:imgs.filter(i=>i.product_id===r.id).map(i=>i.url),popularity:popularity.find(p=>p.product_id===r.id)?.n||0}))}
+export async function orderList():Promise<Order[]>{const rows=await all('SELECT * FROM orders ORDER BY id DESC');const hist=await all('SELECT * FROM order_history ORDER BY id');return rows.map(r=>({...JSON.parse(r.data),id:r.id,folio:'3D-'+String(r.id).padStart(6,'0'),type:r.type,productId:r.product_id||'',quantity:r.quantity,status:r.status,createdAt:r.created_at,history:hist.filter(h=>h.order_id===r.id).map(h=>({date:h.created_at,status:h.status,note:h.note}))}))}
